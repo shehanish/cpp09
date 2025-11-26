@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:20:28 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/11/25 19:20:53 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/11/26 12:03:20 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,25 @@ void	BitcoinExchange::loadDatabase(const std::string& filename)
 	
 	if(pos != std::string::npos)
 	{
-		std::cout << "Correct argument format for argv[1]" << std::endl;
+		//std::cout << "Correct argument format for argv[1]" << std::endl;
 		std::ifstream file(filename.c_str());
 		if(!file.is_open())
 		{
 			std::cerr << "Error: Fild couldn't open!" << std::endl;
+			return;
 		}
 		else
 		{
 			std::string line;
-			getline(file, line);
+			int lineNo = 1;
+			while(getline(file, line))
+			{
+				
+				std::cout << "Line " << lineNo++ << ":"  << line << std::endl;
+			}
+		
+			
+			
 			
 			
 		}
