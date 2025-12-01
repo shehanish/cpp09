@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:20:45 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/11/25 19:20:53 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/12/01 15:03:44 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void loadDatabase(const std::string& filename);
+		//void handleFileOpen(const std::string &iputPath);
 };
 
