@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:20:07 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/12/01 14:40:27 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/12/02 14:09:02 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,16 @@
 
 int main(int argc, char **argv)
 {
-	(void)argv;
-	BitcoinExchange  database;
-
-	if(argc != 2)
+	if (argc != 2)
 	{
-		std::cout << "Error: Not enough arguments: <Usage> <program name> <file name>" << std::endl;
-		return(0);
+		std::cerr << "Error: could not open file." << std::endl;
+		return 1;
 	}
-	
-	std::string args = "data.csv";
-	//todo - data.csv file open and save the data inside in to a database
-	database.loadDatabase(args);
-	//todo - print out an error if file open fail 
-	//todo - 
-	
-	//std::cout << args << std::endl;
-	
 
-	// size_t pos = args.find(".csv");
+	BitcoinExchange btc;
 	
-	
-	
-		
-	
-	
-	
-		
-	return(0);
+	btc.loadDatabase("data.csv");
+	btc.processInput(argv[1]);
+
+	return 0;
 }

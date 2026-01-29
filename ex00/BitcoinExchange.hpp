@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:20:45 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/12/01 15:03:44 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:27:50 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <algorithm>
 #include <string>
 #include <fstream>
+#include <cerrno>
+#include <cstdlib>
 #include <map>
 
 class BitcoinExchange 
@@ -30,6 +32,6 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void loadDatabase(const std::string& filename);
-		//void handleFileOpen(const std::string &iputPath);
+		void processInput(const std::string& filename);
 };
 
