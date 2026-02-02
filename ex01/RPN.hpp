@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 14:24:45 by shkaruna          #+#    #+#             */
-/*   Updated: 2026/01/29 14:27:19 by shkaruna         ###   ########.fr       */
+/*   Updated: 2026/02/02 11:40:07 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 #include <string>
 #include <iostream>
 #include <stack>
+#include <sstream>
+#include <cstdlib>
 
 class RPN 
 {
 	private:
 		std::stack<double>  _stack;
+
+		void	cCalculation(const std::string& op);
+		bool	isOperator(const std::string& token);
 	public:
 		RPN();
 		RPN(const RPN& other);

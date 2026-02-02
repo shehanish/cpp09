@@ -5,32 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 14:25:04 by shkaruna          #+#    #+#             */
-/*   Updated: 2026/02/02 11:26:48 by shkaruna         ###   ########.fr       */
+/*   Created: 2026/02/02 14:11:59 by shkaruna          #+#    #+#             */
+/*   Updated: 2026/02/02 16:23:54 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include <Pmergeme.hpp>
 
-int		main(int argc, char **argv)
+
+int 	main(int argc, char** argv)
 {
-	if(argc != 2)
-		std::cout << "Invalid input: not enough arguments!" << std::endl;
-	
-	RPN myCalculator;
-	
-	try
+	if(argc < 2)
 	{
-		double result = myCalculator.myCalculator(argv[1]);
-
-		std::cout << result << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Error: " << e.what() << '\n';
+		std::cout << "Invalid input" << std::endl;
 		return 1;
 	}
 
-	return 0;
+	PmergeMe  solver;
+
+	try
+	{
+		solver.parseInput(argc, argv);
+		//Triger the sorting logic
+		//solver.sortAndDisplay();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 1;
+	}
+	
+	return (0);
 	
 }
